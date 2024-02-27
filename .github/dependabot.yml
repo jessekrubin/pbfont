@@ -1,18 +1,21 @@
 version: 2
 updates:
-  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    groups:
+      dev-dependencies:
+        patterns:
+          - "*"
+      dependencies:
+        patterns:
+          - "*"
+
+    reviewers:
+      - "jessekrubin"
+
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
-
-  - package-ecosystem: gitsubmodule
-    schedule:
-      interval: "daily"
-    directory: /
-
-  # - package-ecosystem: pip
-  #   directory: "/"
-  #   schedule:
-  #     interval: 'daily'
-  #   open-pull-requests-limit: 4
