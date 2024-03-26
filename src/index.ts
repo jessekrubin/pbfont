@@ -32,6 +32,7 @@ export function combine(
   fontstackName?: string,
 ): Uint8Array | undefined {
   if (buffers.length === 0) return;
+  if (buffers.length === 1) return buffers[0];
   const coverage = new Map<number, boolean>();
   const combinedGlyphs: glyph[] = []; // Initialize an empty array to hold the combined glyphs
   const names: string[] = [];
