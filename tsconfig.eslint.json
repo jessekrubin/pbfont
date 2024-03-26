@@ -8,6 +8,8 @@
     "./.eslintrc.js",
     "./.eslintrc.cjs",
     "./*.config.ts",
-    "./test/**/*.test.ts"
+    "./test/**/*.test.ts",
+    "eslint.config.js",
+    ".prettierrc.cjs"
   ]
 }

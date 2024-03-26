@@ -1,12 +1,12 @@
 import jsse from "@jsse/eslint-config";
 
-export default [
-  ...jsse({
+export default jsse({
     typescript: {
       tsconfig: ["tsconfig.json", "tsconfig.eslint.json"],
     },
     off: ["new-cap", "test/consistent-test-it"],
-  }),
+  },
+
   {
     files: ["src/gen/*.ts"],
     rules: {
@@ -14,4 +14,4 @@ export default [
       "eslint-comments/no-unlimited-disable": "off",
     },
   },
-];
+  );

@@ -78,7 +78,8 @@ export function combine(
   return result.toBinary();
 }
 
-export const decode = glyphs.fromBinary;
+export const decode: typeof glyphs.fromBinary = (bytes, options) =>
+  glyphs.fromBinary(bytes, options);
 
 export function encode(data: glyphs) {
   return data.toBinary();
