@@ -43,7 +43,7 @@
     "@bufbuild/buf": "^1.30.0",
     "@bufbuild/protobuf": "^1.8.0",
     "@bufbuild/protoc-gen-es": "^1.8.0",
-    "@jsse/eslint-config": "^0.1.5",
+    "@jsse/eslint-config": "^0.1.6",
     "@types/node": "^20.11.30",
     "eslint": "~8.57.0",
     "prettier": "~3.2.5",
