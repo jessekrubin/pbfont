@@ -40,16 +40,16 @@
     "vitest:watch": "vitest --config vitest.config.ts"
   },
   "devDependencies": {
-    "@bufbuild/buf": "^1.30.1",
-    "@bufbuild/protobuf": "^1.8.0",
-    "@bufbuild/protoc-gen-es": "^1.8.0",
-    "@jsse/eslint-config": "^0.1.8",
-    "@types/node": "^20.12.4",
-    "eslint": "~8.57.0",
+    "@bufbuild/buf": "^1.31.0",
+    "@bufbuild/protobuf": "^1.9.0",
+    "@bufbuild/protoc-gen-es": "^1.9.0",
+    "@jsse/eslint-config": "^0.1.12",
+    "@types/node": "^20.12.7",
+    "eslint": "~9.1.1",
     "prettier": "~3.2.5",
     "tsup": "~8.0.2",
     "tsx": "~4.7.2",
-    "typescript": "~5.4.4",
-    "vitest": "~1.4.0"
+    "typescript": "~5.4.5",
+    "vitest": "~1.5.0"
   }
 }
