@@ -43,12 +43,12 @@
     "@bufbuild/buf": "^1.31.0",
     "@bufbuild/protobuf": "^1.9.0",
     "@bufbuild/protoc-gen-es": "^1.9.0",
-    "@jsse/eslint-config": "^0.1.13",
-    "@types/node": "^20.12.10",
+    "@jsse/eslint-config": "^0.1.14",
+    "@types/node": "^20.12.11",
     "eslint": "~9.2.0",
     "prettier": "~3.2.5",
     "tsup": "~8.0.2",
-    "tsx": "~4.9.3",
+    "tsx": "~4.10.1",
     "typescript": "~5.4.5",
     "vitest": "~1.6.0"
   }
