@@ -40,10 +40,10 @@
     "vitest:watch": "vitest --config vitest.config.ts"
   },
   "devDependencies": {
-    "@bufbuild/buf": "^1.32.0",
+    "@bufbuild/buf": "^1.32.1",
     "@bufbuild/protobuf": "^1.9.0",
     "@bufbuild/protoc-gen-es": "^1.9.0",
-    "@jsse/eslint-config": "^0.1.14",
+    "@jsse/eslint-config": "^0.1.15",
     "@types/node": "^20.12.12",
     "eslint": "~9.3.0",
     "prettier": "~3.2.5",
