@@ -4,13 +4,15 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+  '@bufbuild/protobuf':
+    specifier: ^1.10.0
+    version: 1.10.0
+
 devDependencies:
   '@bufbuild/buf':
     specifier: ^1.32.2
     version: 1.32.2
-  '@bufbuild/protobuf':
-    specifier: ^1.10.0
-    version: 1.10.0
   '@bufbuild/protoc-gen-es':
     specifier: ^1.10.0
     version: 1.10.0(@bufbuild/protobuf@1.10.0)
@@ -190,7 +192,6 @@ packages:
 
   /@bufbuild/protobuf@1.10.0:
     resolution: {integrity: sha512-QDdVFLoN93Zjg36NoQPZfsVH9tZew7wKDKyV5qRdj8ntT4wQCOradQjRaTdwMhWUYsgKsvCINKKm87FdEk96Ag==}
-    dev: true
 
   /@bufbuild/protoc-gen-es@1.10.0(@bufbuild/protobuf@1.10.0):
     resolution: {integrity: sha512-zBYBsVT/ul4uZb6F+kD7/k4sWNHVVbEPfJwKi0FDr+9VJo8MKIofI6pkr5ksBLr4fi/74r+e/75Xi/0clL5dXg==}
