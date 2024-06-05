@@ -1,10 +1,11 @@
 import jsse from "@jsse/eslint-config";
 
-export default jsse({
+export default jsse(
+  {
     typescript: {
       tsconfig: ["tsconfig.json", "tsconfig.eslint.json"],
     },
-    off: ["new-cap", "test/consistent-test-it"],
+    off: ["new-cap"],
   },
   {
     files: ["src/gen/*.ts"],
@@ -14,4 +15,4 @@ export default jsse({
       "unicorn/no-abusive-eslint-disable": "off",
     },
   },
-  );
+);
