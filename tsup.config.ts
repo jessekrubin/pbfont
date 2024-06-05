@@ -5,11 +5,10 @@ export default defineConfig({
   splitting: false,
   format: ["cjs", "esm"],
   dts: true,
-  // watch: 'src/',
-  minify: true,
+  minify: false,
   outDir: "dist",
   sourcemap: true,
   clean: true,
-  treeshake: true,
+  treeshake: false,
   tsconfig: "./tsconfig.json",
 });

@@ -1,5 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@jsse/tsconfig/tsconfig.json",
   "compilerOptions": {
     "target": "es2022",
     "lib": ["es2023"],
@@ -17,7 +18,7 @@
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-
+    "outDir": "dist/esm",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
