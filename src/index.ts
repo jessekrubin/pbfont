@@ -7,7 +7,7 @@ function debug(buffer: Uint8Array | glyphs) {
 }
 
 function range256(start: number) {
-  if (start < 0 || start > 65535)
+  if (start < 0 || start > 65_535)
     throw new Error(`start must be between 0 and 255; given ${start}`);
 
   const start256 = Math.trunc(start / 256) * 256;
@@ -85,4 +85,6 @@ export function encode(data: glyphs) {
   return data.toBinary();
 }
 
-export { debug, glyphs, fontstack };
+export { debug };
+
+export { glyphs, fontstack } from "./gen/glyphs_pb.js";
