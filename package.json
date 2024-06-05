@@ -27,10 +27,11 @@
     "node": ">=14.18"
   },
   "scripts": {
-    "gen": "npx buf generate proto",
+    "gen": "npx buf generate proto && pnpm run fmt",
     "gen:clean": "npx buf generate proto --clean",
     "build-fast": "tsup",
-    "build": "pnpm gen && tsup --dts",
+    "build": "pnpm gen && tsup --dts && tsc",
+    "build:tsc": "tsc",
     "fmt": "prettier --write src/**/*.{js,jsx,ts,tsx} package.json",
     "lint": "eslint .",
     "test": "vitest run",
@@ -39,11 +40,14 @@
     "vitest": "vitest --config vitest.config.ts --run",
     "vitest:watch": "vitest --config vitest.config.ts"
   },
+  "dependencies": {
+    "@bufbuild/protobuf": "^1.10.0"
+  },
   "devDependencies": {
     "@bufbuild/buf": "^1.32.2",
-    "@bufbuild/protobuf": "^1.10.0",
     "@bufbuild/protoc-gen-es": "^1.10.0",
     "@jsse/eslint-config": "^0.1.15",
+    "@jsse/tsconfig": "^0.0.3",
     "@types/node": "^20.14.2",
     "@vitest/coverage-v8": "^1.6.0",
     "eslint": "^8.56.0",

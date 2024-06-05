@@ -17,6 +17,9 @@ devDependencies:
   '@jsse/eslint-config':
     specifier: ^0.1.15
     version: 0.1.15(eslint@8.57.0)(typescript@5.4.5)(vitest@1.6.0)
+  '@jsse/tsconfig':
+    specifier: ^0.0.3
+    version: 0.0.3
   '@types/node':
     specifier: ^20.14.2
     version: 20.14.2
@@ -832,6 +835,12 @@ packages:
       - typescript
       - vitest
       - vue-eslint-parser
+    dev: true
+
+  /@jsse/tsconfig@0.0.3:
+    resolution: {integrity: sha512-SmASwM7MCmiEnjCgW4Ru94guR9DGHXB7zx/1octWYuQE62UljK4tXHYJ+/XS+Blr6KDHkYWJEewhoAuWYSJExA==}
+    engines: {node: '>=18'}
+    hasBin: true
     dev: true
 
   /@nodelib/fs.scandir@2.1.5:
