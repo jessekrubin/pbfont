@@ -6,12 +6,12 @@ export default jsse({
     },
     off: ["new-cap", "test/consistent-test-it"],
   },
-
   {
     files: ["src/gen/*.ts"],
     rules: {
       "unicorn/filename-case": "off",
       "eslint-comments/no-unlimited-disable": "off",
+      "unicorn/no-abusive-eslint-disable": "off",
     },
   },
   );
