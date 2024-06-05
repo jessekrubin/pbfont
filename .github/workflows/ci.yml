@@ -12,10 +12,7 @@ jobs:
         node-version: [20.x]
 
     runs-on: ${{ matrix.os }}
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
