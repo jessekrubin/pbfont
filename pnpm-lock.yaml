@@ -38,8 +38,8 @@ devDependencies:
     specifier: ~8.1.0
     version: 8.1.0(postcss@8.4.38)(typescript@5.4.5)
   tsx:
-    specifier: ~4.11.2
-    version: 4.11.2
+    specifier: ~4.13.0
+    version: 4.13.0
   typescript:
     specifier: ~5.4.5
     version: 5.4.5
@@ -826,7 +826,7 @@ packages:
       typescript-eslint: 7.12.0(eslint@8.57.0)(typescript@5.4.5)
       yaml-eslint-parser: 1.2.3
     optionalDependencies:
-      tailwindcss: 3.4.3
+      tailwindcss: 3.4.4
     transitivePeerDependencies:
       - astro-eslint-parser
       - supports-color
@@ -3762,8 +3762,8 @@ packages:
       tslib: 2.6.3
     dev: true
 
-  /tailwindcss@3.4.3:
-    resolution: {integrity: sha512-U7sxQk/n397Bmx4JHbJx/iSOOv5G+II3f1kpLpY2QeUv5DcPdcTsYLlusZfq1NthHS1c1cZoyFmmkex1rzke0A==}
+  /tailwindcss@3.4.4:
+    resolution: {integrity: sha512-ZoyXOdJjISB7/BcLTR6SEsLgKtDStYyYZVLsUtWChO4Ps20CBad7lfJKVDiejocV4ME1hLmyY0WJE3hSDcmQ2A==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     requiresBuild: true
@@ -3928,8 +3928,8 @@ packages:
       - ts-node
     dev: true
 
-  /tsx@4.11.2:
-    resolution: {integrity: sha512-V5DL5v1BuItjsQ2FN9+4OjR7n5cr8hSgN+VGmm/fd2/0cgQdBIWHcQ3bFYm/5ZTmyxkTDBUIaRuW2divgfPe0A==}
+  /tsx@4.13.0:
+    resolution: {integrity: sha512-kNY70P2aLMdVBii1Err5ENxDhQ6Vz2PbQGX68DcvzY2/PWK5NLBO6vI7lPr1/2xG3IKSt2MN+KOAyWDQSRlbCA==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     dependencies:
