@@ -46,15 +46,15 @@
   "devDependencies": {
     "@bufbuild/buf": "^1.33.0",
     "@bufbuild/protoc-gen-es": "^1.10.0",
-    "@jsse/eslint-config": "^0.1.15",
+    "@jsse/eslint-config": "^0.1.17",
     "@jsse/tsconfig": "^0.0.3",
-    "@types/node": "^20.14.6",
+    "@types/node": "^20.14.7",
     "@vitest/coverage-v8": "^1.6.0",
     "eslint": "^8.56.0",
     "prettier": "~3.3.2",
     "tsup": "~8.1.0",
-    "tsx": "~4.15.6",
-    "typescript": "~5.4.5",
+    "tsx": "~4.15.7",
+    "typescript": "~5.5.2",
     "vitest": "~1.6.0"
   }
 }
