@@ -1,7 +1,7 @@
 {
   "name": "@jsse/pbfont",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "jessekrubin",
   "license": "MIT",
   "homepage": "https://github.com/jessekrubin/pbfont#readme",
@@ -40,7 +40,7 @@
     "check": "eslint . && prettier --check .",
     "ci:publish": "pnpm publish",
     "ci:version": "changeset version && pnpm install && pnpm fmt",
-    "release": "changeset version && git add -u && git commit -m 'chore: release' && git push && git push --tags && pnpm publish",
+    "release": "changeset version && git add -u && git commit -m \"chore: release\" && git push && git push --tags && pnpm publish",
     "cov": "vitest run --coverage",
     "fmt": "prettier --write src/**/*.{js,jsx,ts,tsx} package.json",
     "fmtc": "prettier --check .",
