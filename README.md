@@ -1,6 +1,6 @@
 # `@jsse/pbfont`
 
-[![NPM Version](https://img.shields.io/npm/v/%40jsse%pbfont?style=flat-square&logo=npm&color=blue&cacheSeconds=60)](https://www.npmjs.com/package/%40jsse/pbfont)
+[![NPM Version](https://img.shields.io/npm/v/%40jsse%2Fpbfont?style=flat-square&logo=npm&color=blue&cacheSeconds=60)](https://www.npmjs.com/package/%40jsse/pbfont)
 
 Composite map(box/libre) font glyph pbfs into a single pbf.
 
@@ -9,8 +9,8 @@ replaces: https://github.com/mapbox/glyph-pbf-composite
 ## Install
 
 ```bash
-npm install @jsse/pbfont # the old standby
-pnpm add @jsse/pbfont    # aka not-performant-pnpm
+pnpm add @jsse/pbfont    # for the hip 
+npm install @jsse/pbfont # aka not-performant-pnpm
 yarn add @jsse/pbfont    # yarn
 bun add @jsse/pbfont     # gen z
 ```
