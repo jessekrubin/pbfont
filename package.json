@@ -4,9 +4,13 @@
   "version": "0.1.0",
   "author": "jessekrubin",
   "license": "MIT",
+  "homepage": "https://github.com/jessekrubin/pbfont#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jessekrubin/pbfont.git"
+    "url": "https://github.com/jessekrubin/pbfont"
+  },
+  "bugs": {
+    "url": "https://github.com/jessekrubin/pbfont/issues"
   },
   "exports": {
     ".": {
@@ -20,23 +24,34 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
+    "README.md",
     "dist",
-    "src"
+    "license",
+    "package.json"
   ],
   "engines": {
-    "node": ">=14.18"
+    "node": ">=18"
   },
   "scripts": {
+    "build": "pnpm gen && tsup --dts && tsc",
+    "build-fast": "tsup",
+    "build:tsc": "tsc",
+    "change": "changeset",
+    "check": "eslint . && prettier --check .",
+    "ci:publish": "pnpm publish",
+    "ci:version": "changeset version && pnpm install && pnpm fmt",
+    "release": "changeset version && git add -u && git commit -m 'chore: release' && git push && git push --tags && pnpm publish",
+    "cov": "vitest run --coverage",
+    "fmt": "prettier --write src/**/*.{js,jsx,ts,tsx} package.json",
+    "fmtc": "prettier --check .",
     "gen": "npx buf generate proto && pnpm run fmt",
     "gen:clean": "npx buf generate proto --clean",
-    "build-fast": "tsup",
-    "build": "pnpm gen && tsup --dts && tsc",
-    "build:tsc": "tsc",
-    "fmt": "prettier --write src/**/*.{js,jsx,ts,tsx} package.json",
     "lint": "eslint .",
+    "prepack": "npm run build",
     "test": "vitest run",
-    "cov": "vitest run --coverage",
+    "tsc": "tsc -p tsconfig.json",
     "tsup": "tsup",
+    "typecheck": "tsc --noEmit",
     "vitest": "vitest --config vitest.config.ts --run",
     "vitest:watch": "vitest --config vitest.config.ts"
   },
@@ -46,6 +61,7 @@
   "devDependencies": {
     "@bufbuild/buf": "^1.33.0",
     "@bufbuild/protoc-gen-es": "^1.10.0",
+    "@changesets/cli": "^2.27.6",
     "@jsse/eslint-config": "^0.1.15",
     "@jsse/tsconfig": "^0.0.3",
     "@types/node": "^20.14.6",
