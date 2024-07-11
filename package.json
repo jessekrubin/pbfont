@@ -65,12 +65,12 @@
     "@jsse/eslint-config": "^0.1.19",
     "@jsse/tsconfig": "^0.0.3",
     "@types/node": "^20.14.10",
-    "@vitest/coverage-v8": "^1.6.0",
+    "@vitest/coverage-v8": "^2.0.2",
     "eslint": "^8.56.0",
     "prettier": "~3.3.2",
     "tsup": "~8.1.0",
     "tsx": "~4.16.2",
     "typescript": "~5.5.3",
-    "vitest": "~1.6.0"
+    "vitest": "~2.0.2"
   }
 }
