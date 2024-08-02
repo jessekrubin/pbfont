@@ -1,9 +1,24 @@
-import type { glyph } from "./gen/glyphs_pb.js";
-import { fontstack, glyphs } from "./gen/glyphs_pb.js";
+import { create, fromBinary, toBinary, toJsonString } from "@bufbuild/protobuf";
+import type { glyph, glyphs } from "./gen/glyphs_pb.js";
+import { fontstackSchema, glyphsSchema } from "./gen/glyphs_pb.js";
+
+// export function parse(buffer: Uint8Array): glyphs {
+//   return fromBinary(glyphsSchema, buffer);
+// }
 
 function debug(buffer: Uint8Array | glyphs) {
-  const _g = buffer instanceof glyphs ? buffer : glyphs.fromBinary(buffer);
-  return _g.toJsonString();
+  if (buffer instanceof Uint8Array) {
+    const g = fromBinary(glyphsSchema, buffer);
+    return toJsonString(glyphsSchema, g);
+  }
+  return toJsonString(glyphsSchema, buffer);
+}
+export function decode(buffer: Uint8Array): glyphs {
+  return fromBinary(glyphsSchema, buffer);
+}
+
+export function encode(data: glyphs) {
+  return toBinary(glyphsSchema, data);
 }
 
 function range256(start: number) {
@@ -37,7 +52,7 @@ export function combine(
   const combinedGlyphs: glyph[] = []; // Initialize an empty array to hold the combined glyphs
   const names: string[] = [];
   for (const buffer of buffers) {
-    const decodedGlyphs = glyphs.fromBinary(buffer);
+    const decodedGlyphs = decode(buffer);
     const currentFontstack = decodedGlyphs.stacks[0];
     const currentGlyphs = currentFontstack?.glyphs || [];
 
@@ -59,7 +74,6 @@ export function combine(
 
   // Sort the combined glyphs by id
   combinedGlyphs.sort((a, b) => {
-    // @ts-expect-error - id is a number but the type thinks it could be undefined
     return a.id - b.id;
   });
   const allids = [...coverage.keys()];
@@ -67,24 +81,15 @@ export function combine(
   const range = range256(minId);
 
   // Create the result glyphs message
-  const thefontstack = new fontstack({
+  const theFontstackObj = {
     name: fontstackName || names.join(", "), // Use provided font stack name or the combined one
     glyphs: combinedGlyphs,
     range: range.str,
-  });
-  const result = new glyphs({
-    stacks: [thefontstack],
-  });
-  return result.toBinary();
-}
-
-export const decode: typeof glyphs.fromBinary = (bytes, options) =>
-  glyphs.fromBinary(bytes, options);
-
-export function encode(data: glyphs) {
-  return data.toBinary();
+  };
+  const thefontstack = create(fontstackSchema, theFontstackObj);
+  const result = create(glyphsSchema, { stacks: [thefontstack] });
+  return encode(result);
 }
 
 export { debug };
-
-export { glyphs, fontstack } from "./gen/glyphs_pb.js";
+export * from "./gen/glyphs_pb.js";
