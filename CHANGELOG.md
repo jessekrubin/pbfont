@@ -1,5 +1,11 @@
 # @jsse/pbfont
 
+## 0.2.0
+
+### Minor Changes
+
+- 6309df1: Upgraded to protobut-es-v2
+
 ## 0.1.2
 
 ### Patch Changes
