@@ -46,7 +46,7 @@ test("compositing two pbfs", (_t) => {
     if (!first) throw new Error("no first");
     expect(first.glyphs.length).toEqual(176);
 
-    const recombinedReexpect = pbfonts.combine([reexpect.toBinary()]);
+    const recombinedReexpect = pbfonts.combine([pbfonts.encode(reexpect)]);
     if (!recombinedReexpect) throw new Error("no recombinedReexpect");
 
     expect(recomposite.stacks.length).toEqual(reexpect.stacks.length);
