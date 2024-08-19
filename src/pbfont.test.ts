@@ -20,19 +20,17 @@ test("compositing two pbfs", (_t) => {
   const combined = pbfonts.combine([openSans512, arialUnicode512]);
   if (!combined) throw new Error("no combined");
   const composite: pbfonts.glyphs = pbfonts.decode(combined);
-  // t.ok(composite.stacks, 'has stacks');
   expect(composite.stacks.length).toBe(1);
   if (!composite.stacks[0]) throw new Error("no composite.stacks[0]");
   expect(composite.stacks[0].name).toBe(
     "Open Sans Regular, Arial Unicode MS Regular",
-  ); //, 'has a name');
+  );
 
   const stack = composite.stacks[0];
   if (!stack) throw new Error("no stack");
 
-  expect(stack.name).toBe("Open Sans Regular, Arial Unicode MS Regular"); //, 'is a named stack');
-  expect(stack.range).toBeTruthy(); //, 'has a glyph range');
-  // expect(composite).toEqual(expected); //, 'equals a server-composited stack');
+  expect(stack.name).toBe("Open Sans Regular, Arial Unicode MS Regular");
+  expect(stack.range).toBeTruthy();
   expect(stack.name).toBeTruthy();
   expect(stack.range).toBeTruthy();
 
@@ -59,7 +57,7 @@ test("compositing two pbfs", (_t) => {
     expect(recomposite.stacks[0].glyphs.length).toEqual(
       reexpect.stacks[0].glyphs.length,
     );
-    expect(recomposite).toEqual(reexpect); //, 'can add on a third for good measure');
+    expect(recomposite).toEqual(reexpect);
   }
 });
 test("returns nothing when given nothing", () => {
@@ -114,7 +112,6 @@ test("compositing and providing fontstack string name", (_t) => {
 test("debug method shows decoded glyphs", (_t) => {
   const something = pbfonts.debug(openSans512);
   expect(something).toBeTruthy();
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   expect(JSON.parse(something).stacks[0].glyphs.length).toBe(16);
   const decodedGlyph = pbfonts.decode(openSans512);
 
@@ -122,9 +119,7 @@ test("debug method shows decoded glyphs", (_t) => {
   const decoded = pbfonts.debug(decodedGlyph);
   expect(decoded).toBeTruthy();
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   expect(() => JSON.parse(decoded)).not.toThrow();
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   expect(JSON.parse(decoded).stacks[0].glyphs.length).toBe(16);
 });
 test("can composite only one pbf version2", (_t) => {
