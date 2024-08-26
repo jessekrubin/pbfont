@@ -77,7 +77,7 @@ export function combine(
     return a.id - b.id;
   });
   const allids = [...coverage.keys()];
-  const minId = Math.min(...allids);
+  const minId = allids.length === 0 ? 0 : Math.min(...allids);
   const range = range256(minId);
 
   // Create the result glyphs message
