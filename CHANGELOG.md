@@ -1,5 +1,11 @@
 # @jsse/pbfont
 
+## 0.2.1
+
+### Patch Changes
+
+- c1dbb6d: Fix bug 91 inf!
+
 ## 0.2.0
 
 ### Minor Changes
