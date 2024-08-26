@@ -5,14 +5,7 @@ export default jsse(
     typescript: {
       tsconfig: ["tsconfig.json", "tsconfig.eslint.json"],
     },
+    ignores: ["src/gen/glyphs_pb.ts"],
     off: ["new-cap"],
-  },
-  {
-    files: ["src/gen/*.ts"],
-    rules: {
-      "unicorn/filename-case": "off",
-      "eslint-comments/no-unlimited-disable": "off",
-      "unicorn/no-abusive-eslint-disable": "off",
-    },
   },
 );
