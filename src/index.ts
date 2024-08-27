@@ -6,6 +6,11 @@ import { fontstackSchema, glyphsSchema } from "./gen/glyphs_pb.js";
 //   return fromBinary(glyphsSchema, buffer);
 // }
 
+type FontRange = {
+  start: number;
+  stop: number;
+  str: string;
+};
 function debug(buffer: Uint8Array | glyphs) {
   if (buffer instanceof Uint8Array) {
     const g = fromBinary(glyphsSchema, buffer);
@@ -21,7 +26,7 @@ export function encode(data: glyphs) {
   return toBinary(glyphsSchema, data);
 }
 
-function range256(start: number) {
+function range256(start: number): FontRange {
   if (start < 0 || start > 65_535)
     throw new Error(`start must be between 0 and 255; given ${start}`);
 
@@ -32,6 +37,34 @@ function range256(start: number) {
     stop: stop256,
     str: `${start256}-${stop256}`,
   };
+}
+
+function parseRange(range: string): {
+  start: number;
+  stop: number;
+  str: string;
+} {
+  const [start, stop] = range.split("-").map(Number);
+  if (
+    start === undefined ||
+    stop === undefined ||
+    Number.isNaN(start) ||
+    Number.isNaN(stop) ||
+    start < 0 ||
+    stop < 0 ||
+    start > 65_535 ||
+    stop > 65_535
+  ) {
+    throw new Error(`range must be in the form 'start-stop'; given ${range}`);
+  }
+  return { start, stop, str: `${start}-${stop}` };
+}
+
+function combineRanges(ranges: string[]): FontRange {
+  const parsedRanges = ranges.map((element) => parseRange(element));
+  const start = Math.min(...parsedRanges.map((r) => r.start));
+  const stop = Math.max(...parsedRanges.map((r) => r.stop));
+  return { start, stop, str: `${start}-${stop}` };
 }
 
 /**
@@ -48,47 +81,45 @@ export function combine(
 ): Uint8Array | undefined {
   if (buffers.length === 0) return;
   if (buffers.length === 1) return buffers[0];
-  const coverage = new Map<number, boolean>();
-  const combinedGlyphs: glyph[] = []; // Initialize an empty array to hold the combined glyphs
-  const names: string[] = [];
-  for (const buffer of buffers) {
-    const decodedGlyphs = decode(buffer);
-    const currentFontstack = decodedGlyphs.stacks[0];
-    const currentGlyphs = currentFontstack?.glyphs || [];
 
-    // Combine glyphs and check for duplicates
+  const combinedGlyphs: glyph[] = [];
+  const coverage = new Set<number>();
+  const names: string[] = [];
+  const rangeStrings: string[] = [];
+
+  for (const buffer of buffers) {
+    const {
+      stacks: [currentFontstack],
+    } = decode(buffer);
+    const {
+      glyphs: currentGlyphs = [],
+      range: fsRange,
+      name: currentFontstackName,
+    } = currentFontstack || {};
+
+    if (fsRange) rangeStrings.push(fsRange);
+    if (currentFontstackName) names.push(currentFontstackName);
+
     for (const glyph of currentGlyphs) {
-      const gid = glyph.id;
-      if (gid !== undefined && !coverage.has(gid)) {
+      if (!coverage.has(glyph.id)) {
         combinedGlyphs.push(glyph);
-        coverage.set(gid, true);
+        coverage.add(glyph.id);
       }
     }
-
-    const currentFontstackName = currentFontstack?.name;
-    // Combine font stack names
-    if (currentFontstackName) {
-      names.push(currentFontstackName);
-    }
   }
+  combinedGlyphs.sort((a, b) => a.id - b.id);
+  const range =
+    rangeStrings.length > 0
+      ? combineRanges(rangeStrings)
+      : range256(Math.min(...coverage));
+  const { str: rangeStr } = range;
 
-  // Sort the combined glyphs by id
-  combinedGlyphs.sort((a, b) => {
-    return a.id - b.id;
-  });
-  const allids = [...coverage.keys()];
-  const minId = allids.length === 0 ? 0 : Math.min(...allids);
-  const range = range256(minId);
-
-  // Create the result glyphs message
-  const theFontstackObj = {
-    name: fontstackName || names.join(", "), // Use provided font stack name or the combined one
+  const resultFontstack = create(fontstackSchema, {
+    name: fontstackName || names.join(", "),
     glyphs: combinedGlyphs,
-    range: range.str,
-  };
-  const thefontstack = create(fontstackSchema, theFontstackObj);
-  const result = create(glyphsSchema, { stacks: [thefontstack] });
-  return encode(result);
+    range: rangeStr || "",
+  });
+  return encode(create(glyphsSchema, { stacks: [resultFontstack] }));
 }
 
 export { debug };
