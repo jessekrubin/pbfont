@@ -1,5 +1,11 @@
 # @jsse/pbfont
 
+## 0.2.2
+
+### Patch Changes
+
+- 24e22ae: fix combo 91
+
 ## 0.2.1
 
 ### Patch Changes
