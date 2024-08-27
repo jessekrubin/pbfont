@@ -68,7 +68,7 @@ test("returns nothing when given nothing", () => {
   expect(pbfonts.combine([])).toBe(undefined);
 });
 
-test("can composite 1kb pbf files", (_t) => {
+test("can composite pbf files with no glyphs", (_t) => {
   const combined = pbfonts.combine([metropolis5375, notoSans5375]);
   if (!combined) throw new Error("no combined");
   const composite = pbfonts.decode(combined);

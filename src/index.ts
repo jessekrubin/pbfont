@@ -51,9 +51,14 @@ export function combine(
   const coverage = new Map<number, boolean>();
   const combinedGlyphs: glyph[] = []; // Initialize an empty array to hold the combined glyphs
   const names: string[] = [];
+  let minId
   for (const buffer of buffers) {
     const decodedGlyphs = decode(buffer);
     const currentFontstack = decodedGlyphs.stacks[0];
+
+    const minmax = currentFontstack.range.split("-");
+    minId = minmax[0]
+
     const currentGlyphs = currentFontstack?.glyphs || [];
 
     // Combine glyphs and check for duplicates
@@ -77,7 +82,9 @@ export function combine(
     return a.id - b.id;
   });
   const allids = [...coverage.keys()];
-  const minId = allids.length === 0 ? 0 : Math.min(...allids);
+  if (allids.length !== 0) {
+	minId = Math.min(...allids);
+  }
   const range = range256(minId);
 
   // Create the result glyphs message
