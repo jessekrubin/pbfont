@@ -69,8 +69,7 @@ test("returns nothing when given nothing", () => {
 });
 
 test("can composite 1kb pbf files", (_t) => {
-  const name = "Metropolis Regular,Noto Sans Regular";
-  const combined = pbfonts.combine([metropolis5375, notoSans5375], name);
+  const combined = pbfonts.combine([metropolis5375, notoSans5375]);
   if (!combined) throw new Error("no combined");
   const composite = pbfonts.decode(combined);
   const expected = pbfonts.decode(composite5375);
