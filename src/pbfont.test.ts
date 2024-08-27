@@ -15,6 +15,10 @@ const arialUnicode512 = readTestFont("arialunicode.512.767.pbf");
 const league512 = readTestFont("league.512.767.pbf");
 const composite512 = readTestFont("opensans.arialunicode.512.767.pbf");
 const triple512 = readTestFont("league.opensans.arialunicode.512.767.pbf");
+const metropolis5375 = readTestFont("metropolis.regular.5120-5375.pbf");
+const notoSans5375 = readTestFont("noto.sans.regular.5120-5375.pbf");
+const composite5375 = readTestFont("metropolis.regular.noto.sans.regular.5120-5375.pbf");
+
 
 test("compositing two pbfs", (_t) => {
   const combined = pbfonts.combine([openSans512, arialUnicode512]);
@@ -62,6 +66,16 @@ test("compositing two pbfs", (_t) => {
 });
 test("returns nothing when given nothing", () => {
   expect(pbfonts.combine([])).toBe(undefined);
+});
+
+test("can composite 1kb pbf files", (_t) => {
+  const name = "Metropolis Regular,Noto Sans Regular";
+  const combined = pbfonts.combine([metropolis5375, notoSans5375], name);
+  if (!combined) throw new Error("no combined");
+  const composite = pbfonts.decode(combined);
+  const expected = pbfonts.decode(composite5375);
+
+  expect(composite).toEqual(expected); //, 'can composite 1kb');
 });
 
 test("can composite only one pbf", (_t) => {
