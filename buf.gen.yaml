@@ -1,6 +1,7 @@
-# Learn more: https://docs.buf.build/configuration/v1/buf-gen-yaml
-version: v1
+version: v2
+inputs:
+  - directory: proto
 plugins:
-  - plugin: es
+  - local: protoc-gen-es
     opt: target=ts
     out: src/gen
