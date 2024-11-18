@@ -1,7 +1,7 @@
 {
   "name": "@jsse/pbfont",
   "type": "module",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "author": "jessekrubin",
   "license": "MIT",
   "homepage": "https://github.com/jessekrubin/pbfont#readme",
@@ -59,18 +59,18 @@
     "@bufbuild/protobuf": "^2.2.2"
   },
   "devDependencies": {
-    "@bufbuild/buf": "^1.46.0",
+    "@bufbuild/buf": "^1.47.2",
     "@bufbuild/protoc-gen-es": "^2.2.2",
     "@changesets/cli": "^2.27.9",
-    "@jsse/eslint-config": "^0.2.25",
-    "@jsse/tsconfig": "^0.2.2",
-    "@types/node": "^22.8.7",
-    "@vitest/coverage-v8": "^2.1.4",
-    "eslint": "^9.10.0",
+    "@jsse/eslint-config": "^0.2.26",
+    "@jsse/tsconfig": "^0.2.3",
+    "@types/node": "^22.9.0",
+    "@vitest/coverage-v8": "^2.1.5",
+    "eslint": "^9.15.0",
     "prettier": "~3.3.3",
     "tsup": "~8.3.5",
     "tsx": "~4.19.2",
     "typescript": "~5.6.3",
-    "vitest": "~2.1.4"
+    "vitest": "~2.1.5"
   }
 }
