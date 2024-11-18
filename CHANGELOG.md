@@ -1,5 +1,11 @@
 # @jsse/pbfont
 
+## 0.2.5
+
+### Patch Changes
+
+- updated deps
+
 ## 0.2.4
 
 ### Patch Changes
