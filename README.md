@@ -1,8 +1,8 @@
 # `@jsse/pbfont`
 
-[![NPM Version](https://img.shields.io/npm/v/%40jsse%2Fpbfont?style=flat-square&logo=npm&color=blue&cacheSeconds=60)](https://www.npmjs.com/package/%40jsse/pbfont)
+pbf-font-glyphs ~ Composite map(box/libre) font glyph pbfs into a single pbf.
 
-Composite map(box/libre) font glyph pbfs into a single pbf.
+[![NPM Version](https://img.shields.io/npm/v/%40jsse%2Fpbfont?style=flat-square&logo=npm&color=blue&cacheSeconds=60)](https://www.npmjs.com/package/%40jsse/pbfont)
 
 replaces: https://github.com/mapbox/glyph-pbf-composite
 
