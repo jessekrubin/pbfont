@@ -63,14 +63,14 @@
     "@bufbuild/protoc-gen-es": "^2.2.2",
     "@changesets/cli": "^2.27.10",
     "@jsse/eslint-config": "^0.2.29",
-    "@jsse/tsconfig": "^0.2.3",
-    "@types/node": "^22.9.2",
-    "@vitest/coverage-v8": "^2.1.5",
+    "@jsse/tsconfig": "^0.2.4",
+    "@types/node": "^22.10.1",
+    "@vitest/coverage-v8": "^2.1.6",
     "eslint": "^9.15.0",
-    "prettier": "~3.3.3",
+    "prettier": "~3.4.1",
     "tsup": "~8.3.5",
     "tsx": "~4.19.2",
     "typescript": "~5.7.2",
-    "vitest": "~2.1.5"
+    "vitest": "~2.1.6"
   }
 }
