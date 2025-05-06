@@ -27,12 +27,12 @@ jobs:
         with:
           version: 8
           run_install: false
-  
+
       - name: pnpm-store-dir
         shell: bash
         run: |
           echo "PNPM_STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-      
+
       - uses: actions/cache@v4
         name: Setup pnpm cache
         with:
@@ -40,7 +40,7 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
-      
+
       - name: Install deps
         run: pnpm i
 
@@ -53,3 +53,15 @@ jobs:
 
       - name: lint
         run: pnpm lint
+
+  automerge:
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
+
+    steps:
+      - uses: fastify/github-action-merge-dependabot@v3
+        with:
+          target: "minor"
