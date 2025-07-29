@@ -5,10 +5,12 @@
     "lib": ["es2023"],
     "module": "node16",
     "moduleResolution": "node16",
-    "checkJs": true,
+    "allowJs": false,
+    "checkJs": false,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "exactOptionalPropertyTypes": true,
+    "isolatedDeclarations": true,
     "skipLibCheck": true
   },
   "include": ["src", "types"]

@@ -7,7 +7,7 @@ type FontRange = {
   stop: number;
   str: string;
 };
-function debug(buffer: Uint8Array | glyphs) {
+function debug(buffer: Uint8Array | glyphs): string {
   if (buffer instanceof Uint8Array) {
     const g = fromBinary(glyphsSchema, buffer);
     return toJsonString(glyphsSchema, g);
@@ -18,7 +18,7 @@ export function decode(buffer: Uint8Array): glyphs {
   return fromBinary(glyphsSchema, buffer);
 }
 
-export function encode(data: glyphs) {
+export function encode(data: glyphs): Uint8Array {
   return toBinary(glyphsSchema, data);
 }
 
