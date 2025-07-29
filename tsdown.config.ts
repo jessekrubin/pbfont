@@ -1,4 +1,4 @@
-import { defineConfig } from "tsup";
+import { defineConfig } from "tsdown";
 
 export default defineConfig({
   entry: ["src/index.ts"],
@@ -9,6 +9,6 @@ export default defineConfig({
   outDir: "dist",
   sourcemap: false,
   clean: true,
-  treeshake: false,
+  treeshake: true,
   tsconfig: "./tsconfig.json",
 });

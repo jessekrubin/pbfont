@@ -1,5 +1,11 @@
 # @jsse/pbfont
 
+## 0.3.0
+
+### Minor Changes
+
+- build: use tsdown and tsc isolatedDeclarations: true
+
 ## 0.2.8
 
 ### Patch Changes

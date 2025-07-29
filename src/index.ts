@@ -2,27 +2,25 @@ import { create, fromBinary, toBinary, toJsonString } from "@bufbuild/protobuf";
 import type { glyph, glyphs } from "./gen/glyphs_pb.js";
 import { fontstackSchema, glyphsSchema } from "./gen/glyphs_pb.js";
 
-// export function parse(buffer: Uint8Array): glyphs {
-//   return fromBinary(glyphsSchema, buffer);
-// }
-
 type FontRange = {
   start: number;
   stop: number;
   str: string;
 };
-function debug(buffer: Uint8Array | glyphs) {
+
+export function debug(buffer: Uint8Array | glyphs): string {
   if (buffer instanceof Uint8Array) {
     const g = fromBinary(glyphsSchema, buffer);
     return toJsonString(glyphsSchema, g);
   }
   return toJsonString(glyphsSchema, buffer);
 }
+
 export function decode(buffer: Uint8Array): glyphs {
   return fromBinary(glyphsSchema, buffer);
 }
 
-export function encode(data: glyphs) {
+export function encode(data: glyphs): Uint8Array {
   return toBinary(glyphsSchema, data);
 }
 
@@ -122,5 +120,4 @@ export function combine(
   return encode(create(glyphsSchema, { stacks: [resultFontstack] }));
 }
 
-export { debug };
 export * from "./gen/glyphs_pb.js";
