@@ -4,9 +4,13 @@ import { expect, test } from "vitest";
 import * as pbfonts from "./index.js";
 
 function readTestFont(name: string) {
-  const d = fs.readFileSync(
-    path.resolve(__dirname, "..", "test", "fixtures", name),
-  );
+  let filepath = path.resolve(__dirname, "..", "test", "fixtures", name);
+  // if filepath
+  if (!fs.existsSync(filepath)) {
+    filepath = path.resolve(__dirname, "..", "..", "test", "fixtures", name);
+  }
+
+  const d = fs.readFileSync(filepath);
   return new Uint8Array(d);
 }
 

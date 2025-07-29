@@ -2,10 +2,6 @@ import { create, fromBinary, toBinary, toJsonString } from "@bufbuild/protobuf";
 import type { glyph, glyphs } from "./gen/glyphs_pb.js";
 import { fontstackSchema, glyphsSchema } from "./gen/glyphs_pb.js";
 
-// export function parse(buffer: Uint8Array): glyphs {
-//   return fromBinary(glyphsSchema, buffer);
-// }
-
 type FontRange = {
   start: number;
   stop: number;

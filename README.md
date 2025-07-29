@@ -9,7 +9,7 @@ replaces: https://github.com/mapbox/glyph-pbf-composite
 ## Install
 
 ```bash
-pnpm add @jsse/pbfont    # for the hip 
+pnpm add @jsse/pbfont    # for the hip
 npm install @jsse/pbfont # aka not-performant-pnpm
 yarn add @jsse/pbfont    # yarn
 bun add @jsse/pbfont     # gen z
@@ -22,7 +22,7 @@ bun add @jsse/pbfont     # gen z
 - Uses `bufbuild` not `pbf`
 - Typescript
 
-___
+---
 
 ## Dev
 
@@ -39,7 +39,7 @@ ___
   - justfile: task-runner
   - cicd / gh-actions / dependabot
 
-___
+---
 
 ## License
 
