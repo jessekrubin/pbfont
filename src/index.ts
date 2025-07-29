@@ -7,13 +7,15 @@ type FontRange = {
   stop: number;
   str: string;
 };
-function debug(buffer: Uint8Array | glyphs): string {
+
+export function debug(buffer: Uint8Array | glyphs): string {
   if (buffer instanceof Uint8Array) {
     const g = fromBinary(glyphsSchema, buffer);
     return toJsonString(glyphsSchema, g);
   }
   return toJsonString(glyphsSchema, buffer);
 }
+
 export function decode(buffer: Uint8Array): glyphs {
   return fromBinary(glyphsSchema, buffer);
 }
@@ -118,5 +120,4 @@ export function combine(
   return encode(create(glyphsSchema, { stacks: [resultFontstack] }));
 }
 
-export { debug };
 export * from "./gen/glyphs_pb.js";
