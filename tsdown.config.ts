@@ -9,6 +9,6 @@ export default defineConfig({
   outDir: "dist",
   sourcemap: false,
   clean: true,
-  treeshake: false,
+  treeshake: true,
   tsconfig: "./tsconfig.json",
 });
