@@ -1,5 +1,11 @@
 # @jsse/pbfont
 
+## 0.3.0
+
+### Minor Changes
+
+- switch to using tsdown for building
+
 ## 0.2.8
 
 ### Patch Changes
