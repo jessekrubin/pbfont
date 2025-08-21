@@ -62,7 +62,7 @@
     "@bufbuild/buf": "^1.56.0",
     "@bufbuild/protoc-gen-es": "^2.7.0",
     "@changesets/cli": "^2.29.6",
-    "@jsse/eslint-config": "^0.4.9",
+    "@jsse/eslint-config": "^0.4.11",
     "@jsse/tsconfig": "^0.3.0",
     "@types/node": "^24.1.0",
     "@vitest/coverage-v8": "^3.2.4",
