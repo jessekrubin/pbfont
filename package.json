@@ -61,7 +61,7 @@
   "devDependencies": {
     "@bufbuild/buf": "^1.57.2",
     "@bufbuild/protoc-gen-es": "^2.9.0",
-    "@changesets/cli": "^2.29.6",
+    "@changesets/cli": "^2.29.7",
     "@jsse/eslint-config": "^0.4.14",
     "@jsse/tsconfig": "^0.3.0",
     "@types/node": "^24.1.0",
