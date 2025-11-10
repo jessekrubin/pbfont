@@ -56,11 +56,11 @@
     "vitest:watch": "vitest --config vitest.config.ts"
   },
   "dependencies": {
-    "@bufbuild/protobuf": "^2.9.0"
+    "@bufbuild/protobuf": "^2.10.0"
   },
   "devDependencies": {
     "@bufbuild/buf": "^1.59.0",
-    "@bufbuild/protoc-gen-es": "^2.9.0",
+    "@bufbuild/protoc-gen-es": "^2.10.0",
     "@changesets/cli": "^2.29.7",
     "@jsse/eslint-config": "^0.4.21",
     "@jsse/tsconfig": "^0.4.0",
