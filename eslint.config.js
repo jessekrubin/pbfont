@@ -5,5 +5,5 @@ export default jsse({
     tsconfig: ["tsconfig.json", "tsconfig.eslint.json"],
   },
   ignores: ["src/gen/glyphs_pb.ts"],
-  off: ["new-cap", "unicorn/expiring-todo-comments"],
+  off: [],
 });
