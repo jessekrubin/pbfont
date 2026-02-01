@@ -1,7 +1,7 @@
 {
   "name": "@jsse/pbfont",
   "type": "module",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": "jessekrubin",
   "license": "MIT",
   "homepage": "https://github.com/jessekrubin/pbfont#readme",
@@ -42,7 +42,7 @@
     "ci:version": "changeset version && pnpm install && pnpm fmt",
     "release": "changeset version && git add -u && git commit -m \"chore: release\" && git push && git push --tags && pnpm publish",
     "cov": "vitest run --coverage",
-    "fmt": "prettier --write src/**/*.{js,jsx,ts,tsx} package.json",
+    "fmt": "prettier --write src package.json",
     "fmtc": "prettier --check .",
     "gen": "npx buf generate proto && pnpm run fmt",
     "gen:clean": "npx buf generate proto --clean",
@@ -65,13 +65,13 @@
     "@jsse/eslint-config": "^0.4.29",
     "@jsse/tsconfig": "^0.4.0",
     "@types/node": "^24.10.9",
-    "@vitest/coverage-v8": "^4.0.17",
+    "@vitest/coverage-v8": "^4.0.18",
     "eslint": "^9.39.2",
     "prettier": "~3.8.1",
     "tsdown": "^0.20.1",
     "tsx": "~4.21.0",
     "typescript": "~5.9.3",
-    "vitest": "~4.0.17"
+    "vitest": "~4.0.18"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
