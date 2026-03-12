@@ -4,9 +4,7 @@ export default defineConfig({
   test: {
     globals: true,
     // reporters: ['verbose'],
-    coverage: {
-      provider: "v8",
-    },
+    coverage: { provider: "v8" },
     include: ["{src,dist}/**/*.test.{js,jsx,ts,tsx}"],
     exclude: [
       "**/node_modules/**",
