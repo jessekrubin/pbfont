@@ -14,19 +14,19 @@ function readTestFont(name: string) {
   return new Uint8Array(d);
 }
 
-const openSans512 = readTestFont("opensans.512.767.pbf");
-const arialUnicode512 = readTestFont("arialunicode.512.767.pbf");
-const league512 = readTestFont("league.512.767.pbf");
-const composite512 = readTestFont("opensans.arialunicode.512.767.pbf");
-const triple512 = readTestFont("league.opensans.arialunicode.512.767.pbf");
-const metropolis5375 = readTestFont("metropolis.regular.5120-5375.pbf");
-const notoSans5375 = readTestFont("noto.sans.regular.5120-5375.pbf");
-const composite5375 = readTestFont(
+const OPENSANS_512 = readTestFont("opensans.512.767.pbf");
+const ARIAL_UNICODE_512 = readTestFont("arialunicode.512.767.pbf");
+const LEAGUE_512 = readTestFont("league.512.767.pbf");
+const COMPOSITE_512 = readTestFont("opensans.arialunicode.512.767.pbf");
+const TRIPLE_512 = readTestFont("league.opensans.arialunicode.512.767.pbf");
+const METROPOLIS_5375 = readTestFont("metropolis.regular.5120-5375.pbf");
+const NOTO_SANS_5375 = readTestFont("noto.sans.regular.5120-5375.pbf");
+const COMPOSITE_5375 = readTestFont(
   "metropolis.regular.noto.sans.regular.5120-5375.pbf",
 );
 
 test("compositing two pbfs", (_t) => {
-  const combined = pbfonts.combine([openSans512, arialUnicode512]);
+  const combined = pbfonts.combine([OPENSANS_512, ARIAL_UNICODE_512]);
   if (!combined) throw new Error("no combined");
   const composite: pbfonts.glyphs = pbfonts.decode(combined);
   expect(composite.stacks.length).toBe(1);
@@ -43,10 +43,10 @@ test("compositing two pbfs", (_t) => {
   expect(stack.name).toBeTruthy();
   expect(stack.range).toBeTruthy();
 
-  const recombined = pbfonts.combine([league512, pbfonts.encode(composite)]);
+  const recombined = pbfonts.combine([LEAGUE_512, pbfonts.encode(composite)]);
   if (recombined) {
     const recomposite = pbfonts.decode(recombined);
-    const reexpect = pbfonts.decode(triple512);
+    const reexpect = pbfonts.decode(TRIPLE_512);
     if (!recomposite) throw new Error("no recomposite");
 
     const first = recomposite.stacks[0];
@@ -74,39 +74,43 @@ test("returns nothing when given nothing", () => {
 });
 
 test("can composite 1kb pbf files", (_t) => {
-  const combined = pbfonts.combine([metropolis5375, notoSans5375]);
+  const combined = pbfonts.combine([METROPOLIS_5375, NOTO_SANS_5375]);
   if (!combined) throw new Error("no combined");
   const composite = pbfonts.decode(combined);
-  const expected = pbfonts.decode(composite5375);
+  const expected = pbfonts.decode(COMPOSITE_5375);
   expect(composite).toEqual(expected);
 });
 
 test("can composite only one pbf", (_t) => {
-  const combined = pbfonts.combine([openSans512]);
+  const combined = pbfonts.combine([OPENSANS_512]);
   if (!combined) throw new Error("no combined");
   const composite = pbfonts.decode(combined);
-  const expected = pbfonts.decode(openSans512);
+  const expected = pbfonts.decode(OPENSANS_512);
   expect(composite).toEqual(expected);
 });
 
 test("can composite more than two", (_t) => {
-  const combined = pbfonts.combine([league512, openSans512, arialUnicode512]);
+  const combined = pbfonts.combine([
+    LEAGUE_512,
+    OPENSANS_512,
+    ARIAL_UNICODE_512,
+  ]);
   if (!combined) throw new Error("no combined");
   const composite = pbfonts.decode(combined);
-  const expected = pbfonts.decode(triple512);
+  const expected = pbfonts.decode(TRIPLE_512);
 
   expect(composite).toEqual(expected); //, 'can composite three');
 });
 
 test("compositing and providing fontstack string name", (_t) => {
   const name = "Open Sans Regular,Arial Unicode MS Regular";
-  const combined = pbfonts.combine([openSans512, arialUnicode512], name);
+  const combined = pbfonts.combine([OPENSANS_512, ARIAL_UNICODE_512], name);
   if (!combined) throw new Error("no combined");
   const composite_name = pbfonts.decode(combined);
-  const combined2 = pbfonts.combine([openSans512, arialUnicode512]);
+  const combined2 = pbfonts.combine([OPENSANS_512, ARIAL_UNICODE_512]);
   if (!combined2) throw new Error("no combined");
   const composite_noname = pbfonts.decode(combined2);
-  const expected = pbfonts.decode(composite512);
+  const expected = pbfonts.decode(COMPOSITE_512);
 
   expect(composite_name.stacks.length).toBe(1); //, 'has stacks');
 
@@ -127,10 +131,10 @@ test("compositing and providing fontstack string name", (_t) => {
 });
 
 test("debug method shows decoded glyphs", (_t) => {
-  const something = pbfonts.debug(openSans512);
+  const something = pbfonts.debug(OPENSANS_512);
   expect(something).toBeTruthy();
   expect(JSON.parse(something).stacks[0].glyphs.length).toBe(16);
-  const decodedGlyph = pbfonts.decode(openSans512);
+  const decodedGlyph = pbfonts.decode(OPENSANS_512);
 
   if (!decodedGlyph) throw new Error("no decodedGlyph");
   const decoded = pbfonts.debug(decodedGlyph);
@@ -140,9 +144,9 @@ test("debug method shows decoded glyphs", (_t) => {
   expect(JSON.parse(decoded).stacks[0].glyphs.length).toBe(16);
 });
 test("can composite only one pbf version2", (_t) => {
-  const combined = pbfonts.combine([openSans512]);
+  const combined = pbfonts.combine([OPENSANS_512]);
   if (!combined) throw new Error("no combined");
   const composite = pbfonts.decode(combined);
-  const expected = pbfonts.decode(openSans512);
+  const expected = pbfonts.decode(OPENSANS_512);
   expect(composite).toEqual(expected);
 });
