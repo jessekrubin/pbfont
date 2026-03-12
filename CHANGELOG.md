@@ -1,5 +1,11 @@
 # @jsse/pbfont
 
+## 0.3.3
+
+### Patch Changes
+
+- fix exports and add version with `@bufbuild/protobuf` bundled importable via `@jsse/pbfont/bundle`
+
 ## 0.3.2
 
 ### Patch Changes

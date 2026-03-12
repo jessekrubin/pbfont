@@ -1,7 +1,7 @@
 {
   "name": "@jsse/pbfont",
   "type": "module",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "author": "jessekrubin",
   "license": "MIT",
   "homepage": "https://github.com/jessekrubin/pbfont#readme",
@@ -23,6 +23,16 @@
         "default": "./dist/index.cjs"
       }
     },
+    "./bundle": {
+      "import": {
+        "types": "./dist/bundle.d.ts",
+        "default": "./dist/bundle.js"
+      },
+      "require": {
+        "types": "./dist/bundle.d.cts",
+        "default": "./dist/bundle.cjs"
+      }
+    },
     "./package.json": "./package.json"
   },
   "main": "dist/index.cjs",
@@ -38,7 +48,7 @@
     "node": ">=18"
   },
   "scripts": {
-    "build": "pnpm gen && tsdown --dts && tsc",
+    "build": "pnpm gen && tsdown --dts && tsc && publint",
     "build-fast": "tsdown",
     "build:tsc": "tsc",
     "change": "changeset",

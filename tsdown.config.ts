@@ -14,7 +14,11 @@ export default defineConfig([
     tsconfig: "./tsconfig.json",
   },
   {
-    entry: ["src/index.ts"],
+    entry: ["src/bundle.ts"],
+    deps: {
+      alwaysBundle: [/^@bufbuild\/protobuf/],
+      onlyBundle: [/^@bufbuild\/protobuf/],
+    },
     format: ["cjs", "esm"],
     dts: true,
     minify: false,
@@ -24,5 +28,5 @@ export default defineConfig([
     clean: true,
     treeshake: true,
     tsconfig: "./tsconfig.json",
-  }
+  },
 ]);

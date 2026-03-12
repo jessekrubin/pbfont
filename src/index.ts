@@ -2,11 +2,7 @@ import { create, fromBinary, toBinary, toJsonString } from "@bufbuild/protobuf";
 import type { glyph, glyphs } from "./gen/glyphs_pb.js";
 import { fontstackSchema, glyphsSchema } from "./gen/glyphs_pb.js";
 
-type FontRange = {
-  start: number;
-  stop: number;
-  str: string;
-};
+type FontRange = { start: number; stop: number; str: string };
 
 export function debug(buffer: Uint8Array | glyphs): string {
   if (buffer instanceof Uint8Array) {
@@ -30,11 +26,7 @@ function range256(start: number): FontRange {
 
   const start256 = Math.trunc(start / 256) * 256;
   const stop256 = start256 + 255;
-  return {
-    start: start256,
-    stop: stop256,
-    str: `${start256}-${stop256}`,
-  };
+  return { start: start256, stop: stop256, str: `${start256}-${stop256}` };
 }
 
 function parseRange(range: string): {
