@@ -1,22 +1,37 @@
 {
   "name": "@jsse/pbfont",
   "type": "module",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "author": "jessekrubin",
   "license": "MIT",
   "homepage": "https://github.com/jessekrubin/pbfont#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jessekrubin/pbfont"
+    "url": "git+https://github.com/jessekrubin/pbfont.git"
   },
   "bugs": {
     "url": "https://github.com/jessekrubin/pbfont/issues"
   },
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./bundle": {
+      "import": {
+        "types": "./dist/bundle.d.ts",
+        "default": "./dist/bundle.js"
+      },
+      "require": {
+        "types": "./dist/bundle.d.cts",
+        "default": "./dist/bundle.cjs"
+      }
     },
     "./package.json": "./package.json"
   },
@@ -33,7 +48,7 @@
     "node": ">=18"
   },
   "scripts": {
-    "build": "pnpm gen && tsdown --dts && tsc",
+    "build": "pnpm gen && tsdown --dts && tsc && publint",
     "build-fast": "tsdown",
     "build:tsc": "tsc",
     "change": "changeset",
@@ -65,9 +80,10 @@
     "@jsse/eslint-config": "^0.6.2",
     "@jsse/tsconfig": "^0.4.0",
     "@types/node": "^24.12.0",
-    "@vitest/coverage-v8": "^4.0.18",
-    "eslint": "^9.39.3",
+    "@vitest/coverage-v8": "^4.1.0",
+    "eslint": "^9.39.4",
     "prettier": "~3.8.1",
+    "publint": "^0.3.18",
     "tsdown": "^0.21.2",
     "tsx": "~4.21.0",
     "typescript": "~5.9.3",
