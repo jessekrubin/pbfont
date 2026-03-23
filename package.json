@@ -78,7 +78,7 @@
     "@bufbuild/protoc-gen-es": "^2.11.0",
     "@changesets/cli": "^2.30.0",
     "@jsse/eslint-config": "^0.7.0",
-    "@jsse/tsconfig": "^0.4.0",
+    "@jsse/tsconfig": "^0.4.1",
     "@types/node": "^24.12.0",
     "@vitest/coverage-v8": "^4.1.0",
     "eslint": "^9.39.4",
