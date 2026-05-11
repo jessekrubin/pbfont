@@ -40,11 +40,11 @@ importers:
         specifier: ~3.8.3
         version: 3.8.3
       publint:
-        specifier: ^0.3.19
-        version: 0.3.19
+        specifier: ^0.3.20
+        version: 0.3.20
       tsdown:
         specifier: ^0.22.0
-        version: 0.22.0(publint@0.3.19)(tsx@4.21.0)(typescript@6.0.3)(unrun@0.2.37(synckit@0.11.12))
+        version: 0.22.0(publint@0.3.20)(tsx@4.21.0)(typescript@6.0.3)(unrun@0.2.37(synckit@0.11.12))
       tsx:
         specifier: ~4.21.0
         version: 4.21.0
@@ -2052,8 +2052,8 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
-  publint@0.3.19:
-    resolution: {integrity: sha512-J3p4GOocCRFyLLFRzGfIhAwWgk0Kkcdxj5iFspFvCYbyiJs5IhCM8gsIkcNeQL+tdpV671RtJQiTFSUKhl1Wjg==}
+  publint@0.3.20:
+    resolution: {integrity: sha512-UWqFYP7VBVCe9l/leEEGJrDs6Am4K4KapLmLi5qbt+9fA+Ny38ghdW+bw1nYfVqCK8/3kgsxjjhFjTYqYYRpyw==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -4623,7 +4623,7 @@ snapshots:
 
   prettier@3.8.3: {}
 
-  publint@0.3.19:
+  publint@0.3.20:
     dependencies:
       '@publint/pack': 0.1.4
       package-manager-detector: 1.6.0
@@ -4854,7 +4854,7 @@ snapshots:
       picomatch: 4.0.4
       typescript: 6.0.3
 
-  tsdown@0.22.0(publint@0.3.19)(tsx@4.21.0)(typescript@6.0.3)(unrun@0.2.37(synckit@0.11.12)):
+  tsdown@0.22.0(publint@0.3.20)(tsx@4.21.0)(typescript@6.0.3)(unrun@0.2.37(synckit@0.11.12)):
     dependencies:
       ansis: 4.2.0
       cac: 7.0.0
@@ -4872,7 +4872,7 @@ snapshots:
       tree-kill: 1.2.2
       unconfig-core: 7.5.0
     optionalDependencies:
-      publint: 0.3.19
+      publint: 0.3.20
       tsx: 4.21.0
       typescript: 6.0.3
       unrun: 0.2.37(synckit@0.11.12)
