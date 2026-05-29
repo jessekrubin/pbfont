@@ -22,8 +22,8 @@ importers:
         specifier: ^2.31.0
         version: 2.31.0(@types/node@24.12.4)
       '@jsse/eslint-config':
-        specifier: ^0.7.6
-        version: 0.7.6(@typescript-eslint/typescript-estree@8.60.0(typescript@6.0.3))(@typescript-eslint/utils@8.60.0(eslint@9.39.4)(typescript@6.0.3))(eslint@9.39.4)(typescript@6.0.3)(vitest@4.1.7)
+        specifier: ^0.7.7
+        version: 0.7.7(@typescript-eslint/typescript-estree@8.60.0(typescript@6.0.3))(@typescript-eslint/utils@8.60.0(eslint@9.39.4)(typescript@6.0.3))(eslint@9.39.4)(typescript@6.0.3)(vitest@4.1.7)
       '@jsse/tsconfig':
         specifier: ^0.5.1
         version: 0.5.1
@@ -674,8 +674,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@jsse/eslint-config@0.7.6':
-    resolution: {integrity: sha512-PW5GJBnlnP7GTDLGZ68EM6d2zsvemptRKSj2WgbK8bD4Tc/RK3xtifjaXHEqWLF6LyJY8t7+L+1yDI1SbYnPyw==}
+  '@jsse/eslint-config@0.7.7':
+    resolution: {integrity: sha512-GblQmi4VuBBdLMNi7idnPFa9K4B99QugqXlh0QRKHa++vO90K2kFHHtT2NTIy8XvkD++kFoLR4KXSWBXEBd/Zg==}
     hasBin: true
     peerDependencies:
       '@eslint-react/eslint-plugin': ^4.2.3
@@ -3126,7 +3126,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@jsse/eslint-config@0.7.6(@typescript-eslint/typescript-estree@8.60.0(typescript@6.0.3))(@typescript-eslint/utils@8.60.0(eslint@9.39.4)(typescript@6.0.3))(eslint@9.39.4)(typescript@6.0.3)(vitest@4.1.7)':
+  '@jsse/eslint-config@0.7.7(@typescript-eslint/typescript-estree@8.60.0(typescript@6.0.3))(@typescript-eslint/utils@8.60.0(eslint@9.39.4)(typescript@6.0.3))(eslint@9.39.4)(typescript@6.0.3)(vitest@4.1.7)':
     dependencies:
       '@eslint-community/eslint-plugin-eslint-comments': 4.7.2(eslint@9.39.4)
       '@eslint/compat': 2.1.0(eslint@9.39.4)
