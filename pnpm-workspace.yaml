@@ -1,0 +1,5 @@
+allowBuilds:
+  '@bufbuild/buf': true
+  esbuild: true
+minimumReleaseAgeExclude:
+  - '@jsse/eslint-config'

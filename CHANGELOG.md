@@ -1,5 +1,11 @@
 # @jsse/pbfont
 
+## 0.3.4
+
+### Patch Changes
+
+- use pnpm11
+
 ## 0.3.3
 
 ### Patch Changes
