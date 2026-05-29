@@ -12,6 +12,7 @@
   "bugs": {
     "url": "https://github.com/jessekrubin/pbfont/issues"
   },
+  "sideEffects": false,
   "exports": {
     ".": {
       "import": {
