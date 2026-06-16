@@ -78,9 +78,8 @@ export function combine(
   const rangeStrings: string[] = [];
 
   for (const buffer of buffers) {
-    const {
-      stacks: [currentFontstack],
-    } = decode(buffer);
+    const { stacks } = decode(buffer);
+    const currentFontstack = stacks.at(0);
     const {
       glyphs: currentGlyphs = [],
       range: fsRange,
