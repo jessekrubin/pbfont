@@ -2,14 +2,8 @@
   "incremental": true,
   "lineWidth": 80,
   "useTabs": false,
-  "json": {
-    "indentWidth": 2,
-    "useTabs": false
-  },
-  "markdown": {
-    "lineWidth": 120,
-    "newLineKind": "lf"
-  },
+  "json": { "indentWidth": 2, "useTabs": false },
+  "markdown": { "lineWidth": 120, "newLineKind": "lf" },
   "toml": {},
   "dockerfile": {},
   "includes": [

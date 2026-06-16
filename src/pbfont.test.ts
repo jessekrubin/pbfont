@@ -46,13 +46,13 @@ test("compositing two pbfs", (_t) => {
   const recombined = pbfonts.combine([LEAGUE_512, pbfonts.encode(composite)]);
   if (recombined) {
     const recomposite = pbfonts.decode(recombined);
-    const reexpect = pbfonts.decode(TRIPLE_512);
     if (!recomposite) throw new Error("no recomposite");
 
     const first = recomposite.stacks[0];
     if (!first) throw new Error("no first");
     expect(first.glyphs.length).toEqual(176);
 
+    const reexpect = pbfonts.decode(TRIPLE_512);
     const recombinedReexpect = pbfonts.combine([pbfonts.encode(reexpect)]);
     if (!recombinedReexpect) throw new Error("no recombinedReexpect");
 
