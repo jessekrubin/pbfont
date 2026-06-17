@@ -4,7 +4,14 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    cooldown:
+      default-days: 2
+      include:
+        - "*"
+      exclude:
+        - "@jsse/*"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+
