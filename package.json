@@ -80,7 +80,7 @@
     "@changesets/cli": "^2.31.0",
     "@jsse/eslint-config": "^0.8.0",
     "@jsse/tsconfig": "^0.5.1",
-    "@types/node": "^24.13.2",
+    "@types/node": "^26.0.0",
     "@vitest/coverage-v8": "^4.1.9",
     "eslint": "^10.5.0",
     "prettier": "~3.8.4",
