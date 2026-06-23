@@ -90,6 +90,7 @@ export function combine(
     if (currentFontstackName) names.push(currentFontstackName);
 
     for (const glyph of currentGlyphs) {
+      // eslint-disable-next-line unicorn/prefer-continue
       if (!coverage.has(glyph.id)) {
         combinedGlyphs.push(glyph);
         coverage.add(glyph.id);
