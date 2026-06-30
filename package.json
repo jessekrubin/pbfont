@@ -83,7 +83,7 @@
     "@types/node": "^24.13.2",
     "@vitest/coverage-v8": "^4.1.9",
     "eslint": "^10.5.0",
-    "prettier": "~3.8.4",
+    "prettier": "~3.9.1",
     "publint": "^0.3.21",
     "tsdown": "^0.22.3",
     "tsx": "~4.22.4",
