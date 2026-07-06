@@ -116,4 +116,10 @@ export function combine(
   return encode(create(glyphsSchema, { stacks: [resultFontstack] }));
 }
 
-export * from "./gen/glyphs_pb.js";
+export type { fontstack, glyph, glyphs } from "./gen/glyphs_pb.js";
+export {
+  file_glyphs,
+  fontstackSchema,
+  glyphSchema,
+  glyphsSchema,
+} from "./gen/glyphs_pb.js";
