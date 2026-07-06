@@ -95,7 +95,7 @@ test("can composite more than two", (_t) => {
   const composite = pbfonts.decode(combined);
   const expected = pbfonts.decode(TRIPLE_512);
 
-  expect(composite).toEqual(expected); //, 'can composite three');
+  expect(composite, "can composite three").toEqual(expected);
 });
 
 test("compositing and providing fontstack string name", (_t) => {
@@ -108,10 +108,10 @@ test("compositing and providing fontstack string name", (_t) => {
   const composite_noname = pbfonts.decode(combined2);
   const expected = pbfonts.decode(COMPOSITE_512);
 
-  expect(composite_name.stacks.length).toBe(1); //, 'has stacks');
+  expect(composite_name.stacks.length, "has stacks").toBe(1);
 
   if (!composite_name.stacks[0]) throw new Error("no composite_name.stacks[0]");
-  expect(composite_name.stacks[0].name).toBe(name); //, 'has a name');
+  expect(composite_name.stacks[0].name, "has a name").toBe(name);
   expect(composite_noname).toEqual(expected);
   expect(composite_name).not.toEqual(expected);
   if (!composite_noname.stacks[0])

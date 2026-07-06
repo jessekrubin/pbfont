@@ -3,7 +3,7 @@ import { defineConfig } from "vitest/config";
 export default defineConfig({
   test: {
     globals: true,
-    // reporters: ['verbose'],
+    reporters: ["verbose"],
     coverage: { provider: "v8" },
     include: ["{src,dist}/**/*.test.{js,jsx,ts,tsx}"],
     exclude: [
