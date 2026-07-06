@@ -36,8 +36,6 @@ test("compositing two pbfs", (_t) => {
   );
 
   const stack = composite.stacks[0];
-  if (!stack) throw new Error("no stack");
-
   expect(stack.name).toBe("Open Sans Regular, Arial Unicode MS Regular");
   expect(stack.range).toBeTruthy();
   expect(stack.name).toBeTruthy();
@@ -46,7 +44,6 @@ test("compositing two pbfs", (_t) => {
   const recombined = pbfonts.combine([LEAGUE_512, pbfonts.encode(composite)]);
   if (recombined) {
     const recomposite = pbfonts.decode(recombined);
-    if (!recomposite) throw new Error("no recomposite");
 
     const first = recomposite.stacks[0];
     if (!first) throw new Error("no first");
@@ -61,7 +58,6 @@ test("compositing two pbfs", (_t) => {
 
     const recompositelength = recomposite.stacks[0].glyphs.length;
     expect(recompositelength).toEqual(176);
-    if (!recomposite.stacks[0]) throw new Error("no recomposite.stacks[0]");
     if (!reexpect.stacks[0]) throw new Error("no reexpect.stacks[0]");
     expect(recomposite.stacks[0].glyphs.length).toEqual(
       reexpect.stacks[0].glyphs.length,
@@ -118,7 +114,6 @@ test("compositing and providing fontstack string name", (_t) => {
   expect(composite_name.stacks[0].name).toBe(name); //, 'has a name');
   expect(composite_noname).toEqual(expected);
   expect(composite_name).not.toEqual(expected);
-  if (!composite_name.stacks[0]) throw new Error("no composite_name.stacks[0]");
   if (!composite_noname.stacks[0])
     throw new Error("no composite_noname.stacks[0]");
   expect(composite_name.stacks[0].glyphs).toEqual(
@@ -137,7 +132,6 @@ test("debug method shows decoded glyphs", (_t) => {
   expect(JSON.parse(something).stacks[0].glyphs.length).toBe(16);
   const decodedGlyph = pbfonts.decode(OPENSANS_512);
 
-  if (!decodedGlyph) throw new Error("no decodedGlyph");
   const decoded = pbfonts.debug(decodedGlyph);
   expect(decoded).toBeTruthy();
 
@@ -146,6 +140,7 @@ test("debug method shows decoded glyphs", (_t) => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   expect(JSON.parse(decoded).stacks[0].glyphs.length).toBe(16);
 });
+
 test("can composite only one pbf version2", (_t) => {
   const combined = pbfonts.combine([OPENSANS_512]);
   if (!combined) throw new Error("no combined");

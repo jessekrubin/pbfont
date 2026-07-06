@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
+  "$schema": "https://www.schemastore.org/tsconfig.json",
   "extends": "@jsse/tsconfig/tsconfig.json",
   "compilerOptions": {
     "lib": ["es2023"],
@@ -9,6 +9,7 @@
     "types": ["node"],
     "allowJs": false,
     "checkJs": false,
+    "strict": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "exactOptionalPropertyTypes": true,
