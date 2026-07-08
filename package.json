@@ -1,18 +1,27 @@
 {
   "name": "@jsse/pbfont",
-  "type": "module",
   "version": "0.3.4",
-  "author": "jessekrubin",
-  "license": "MIT",
   "homepage": "https://github.com/jessekrubin/pbfont#readme",
+  "bugs": {
+    "url": "https://github.com/jessekrubin/pbfont/issues"
+  },
+  "license": "MIT",
+  "author": "jessekrubin",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jessekrubin/pbfont.git"
   },
-  "bugs": {
-    "url": "https://github.com/jessekrubin/pbfont/issues"
-  },
+  "files": [
+    "README.md",
+    "dist",
+    "license",
+    "package.json"
+  ],
+  "type": "module",
   "sideEffects": false,
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "import": {
@@ -35,18 +44,6 @@
       }
     },
     "./package.json": "./package.json"
-  },
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "README.md",
-    "dist",
-    "license",
-    "package.json"
-  ],
-  "engines": {
-    "node": ">=18"
   },
   "scripts": {
     "build": "pnpm gen && tsdown --dts && tsc && publint",
@@ -78,16 +75,19 @@
     "@bufbuild/buf": "^1.71.0",
     "@bufbuild/protoc-gen-es": "^2.12.1",
     "@changesets/cli": "^2.31.0",
-    "@jsse/eslint-config": "^0.9.1",
+    "@jsse/eslint-config": "^0.9.2",
     "@jsse/tsconfig": "^0.5.2",
     "@types/node": "^24.13.2",
-    "@vitest/coverage-v8": "^4.1.9",
+    "@vitest/coverage-v8": "^4.1.10",
     "eslint": "^10.6.0",
     "prettier": "~3.9.4",
     "publint": "^0.3.21",
     "tsdown": "^0.22.3",
     "tsx": "~4.23.0",
     "typescript": "~6.0.3",
-    "vitest": "~4.1.9"
+    "vitest": "~4.1.10"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
