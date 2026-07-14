@@ -22,12 +22,11 @@ export function encode(data: glyphs): Uint8Array {
 
 function range256(start: number): FontRange {
   if (start < 0 || start > 65_535)
-     
     throw new Error(`start must be between 0 and 255; given ${start}`);
 
   const start256 = Math.trunc(start / 256) * 256;
   const stop256 = start256 + 255;
-   
+
   return { start: start256, stop: stop256, str: `${start256}-${stop256}` };
 }
 
@@ -49,7 +48,7 @@ function parseRange(range: string): {
   ) {
     throw new Error(`range must be in the form 'start-stop'; given ${range}`);
   }
-   
+
   return { start, stop, str: `${start}-${stop}` };
 }
 
@@ -57,7 +56,7 @@ function combineRanges(ranges: string[]): FontRange {
   const parsedRanges = ranges.map((element) => parseRange(element));
   const start = Math.min(...parsedRanges.map((r) => r.start));
   const stop = Math.max(...parsedRanges.map((r) => r.stop));
-   
+
   return { start, stop, str: `${start}-${stop}` };
 }
 
