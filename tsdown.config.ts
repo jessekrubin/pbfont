@@ -21,7 +21,7 @@ export default defineConfig([
     },
     format: ["cjs", "esm"],
     dts: true,
-    minify: false,
+    minify: true,
     fixedExtension: false,
     outDir: "dist",
     sourcemap: false,
