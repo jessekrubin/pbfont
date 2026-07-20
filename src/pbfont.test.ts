@@ -128,16 +128,16 @@ test("compositing and providing fontstack string name", (_t) => {
 test("debug method shows decoded glyphs", (_t) => {
   const something = pbfonts.debug(OPENSANS_512);
   expect(something).toBeTruthy();
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+   
   expect(JSON.parse(something).stacks[0].glyphs.length).toBe(16);
   const decodedGlyph = pbfonts.decode(OPENSANS_512);
 
   const decoded = pbfonts.debug(decodedGlyph);
   expect(decoded).toBeTruthy();
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+   
   expect(() => JSON.parse(decoded)).not.toThrow();
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+   
   expect(JSON.parse(decoded).stacks[0].glyphs.length).toBe(16);
 });
 
