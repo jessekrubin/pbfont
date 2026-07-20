@@ -72,7 +72,7 @@
     "@bufbuild/protobuf": "^2.12.1"
   },
   "devDependencies": {
-    "@bufbuild/buf": "^1.71.0",
+    "@bufbuild/buf": "^1.72.0",
     "@bufbuild/protoc-gen-es": "^2.12.1",
     "@changesets/cli": "^2.31.0",
     "@jsse/eslint-config": "^0.9.6",
