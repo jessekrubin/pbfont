@@ -128,16 +128,15 @@ test("compositing and providing fontstack string name", (_t) => {
 test("debug method shows decoded glyphs", (_t) => {
   const something = pbfonts.debug(OPENSANS_512);
   expect(something).toBeTruthy();
-   
+
   expect(JSON.parse(something).stacks[0].glyphs.length).toBe(16);
   const decodedGlyph = pbfonts.decode(OPENSANS_512);
 
   const decoded = pbfonts.debug(decodedGlyph);
   expect(decoded).toBeTruthy();
 
-   
   expect(() => JSON.parse(decoded)).not.toThrow();
-   
+
   expect(JSON.parse(decoded).stacks[0].glyphs.length).toBe(16);
 });
 
