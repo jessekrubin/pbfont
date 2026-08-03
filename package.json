@@ -75,7 +75,7 @@
     "@bufbuild/buf": "^1.72.0",
     "@bufbuild/protoc-gen-es": "^2.13.0",
     "@changesets/cli": "^2.31.1",
-    "@jsse/eslint-config": "^0.9.11",
+    "@jsse/eslint-config": "^0.9.16",
     "@jsse/tsconfig": "^0.5.2",
     "@types/node": "^24.13.3",
     "@vitest/coverage-v8": "^4.1.10",
@@ -83,7 +83,7 @@
     "prettier": "~3.9.6",
     "publint": "^0.3.22",
     "tsdown": "^0.22.14",
-    "tsx": "~4.23.1",
+    "tsx": "~4.23.4",
     "typescript": "~6.0.3",
     "vitest": "~4.1.10"
   },
