@@ -1,0 +1,10 @@
+{
+  "$schema": "https://www.schemastore.org/tsconfig.json",
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declarationMap": false,
+    "sourceMap": false
+  },
+  "include": ["src"],
+  "exclude": ["src/pbfont.test.ts", "src/bundle.ts"]
+}

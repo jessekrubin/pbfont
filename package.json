@@ -46,9 +46,9 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "pnpm gen && tsdown --dts && tsc && publint",
+    "build": "pnpm gen && tsdown --dts && tsc -p tsconfig.build.json && publint",
     "build-fast": "tsdown",
-    "build:tsc": "tsc",
+    "build:tsc": "tsc -p tsconfig.build.json",
     "change": "changeset",
     "check": "eslint . && prettier --check .",
     "ci:publish": "pnpm publish",
