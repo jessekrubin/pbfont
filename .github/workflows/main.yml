@@ -13,13 +13,13 @@ jobs:
 
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
-      - uses: actions/setup-node@v7
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
           node-version: ${{ matrix.node-version }}
 
-      - uses: pnpm/action-setup@v6
+      - uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
         name: Install pnpm
         with:
           version: 11.13.x
@@ -30,7 +30,7 @@ jobs:
         run: |
           echo "PNPM_STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - uses: actions/cache@v6
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
         name: Setup pnpm cache
         with:
           path: ${{ env.PNPM_STORE_PATH }}
@@ -60,7 +60,7 @@ jobs:
       contents: write
 
     steps:
-      - uses: fastify/github-action-merge-dependabot@v3
+      - uses: fastify/github-action-merge-dependabot@73ec4cbb5e56df5591eae286972d5b2201ffe90f # v3
         with:
           target: "minor"
           exclude: "@types/node"

@@ -57,8 +57,8 @@
     "cov": "vitest run --coverage",
     "fmt": "prettier --write src package.json",
     "fmtc": "prettier --check .",
-    "gen": "npx buf generate proto && pnpm run fmt",
-    "gen:clean": "npx buf generate proto --clean",
+    "gen": "pnpm exec buf generate proto && pnpm run fmt",
+    "gen:clean": "pnpm exec buf generate proto --clean",
     "lint": "eslint .",
     "prepack": "npm run build",
     "test": "vitest run",
@@ -75,17 +75,24 @@
     "@bufbuild/buf": "^1.72.0",
     "@bufbuild/protoc-gen-es": "^2.13.0",
     "@changesets/cli": "^2.31.1",
-    "@jsse/eslint-config": "^0.9.16",
-    "@jsse/tsconfig": "^0.5.2",
+    "@jsse/eslint-config": "^0.9.17",
+    "@jsse/tsconfig": "^0.6.0",
     "@types/node": "^24.13.3",
     "@vitest/coverage-v8": "^4.1.10",
     "eslint": "^10.8.0",
     "prettier": "~3.9.6",
-    "publint": "^0.3.22",
+    "publint": "^0.3.23",
     "tsdown": "^0.22.14",
-    "tsx": "~4.23.5",
+    "tsx": "~4.23.9",
     "typescript": "~6.0.3",
     "vitest": "~4.1.10"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.20.0",
+      "onFail": "download"
+    }
   },
   "engines": {
     "node": ">=18"
