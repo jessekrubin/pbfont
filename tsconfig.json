@@ -4,17 +4,11 @@
   "compilerOptions": {
     "lib": ["es2023"],
     "rootDir": "./src",
-    "module": "node16",
-    "moduleResolution": "node16",
     "types": ["node"],
     "allowJs": false,
-    "checkJs": false,
-    "strict": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
-    "exactOptionalPropertyTypes": true,
-    "isolatedDeclarations": true,
-    "skipLibCheck": true
+    "isolatedDeclarations": true
   },
   "include": ["src", "types"]
 }

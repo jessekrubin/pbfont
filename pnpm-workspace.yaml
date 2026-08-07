@@ -3,3 +3,4 @@ allowBuilds:
   esbuild: true
 minimumReleaseAgeExclude:
   - "@jsse/eslint-config"
+  - "@jsse/tsconfig"
