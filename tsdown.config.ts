@@ -1,8 +1,7 @@
 import { defineConfig } from "tsdown";
+import type { UserConfig } from "tsdown/config";
 
-export default defineConfig([
-  {
-    entry: ["src/index.ts"],
+const CORE_OPTIONS = {
     format: ["cjs", "esm"],
     dts: true,
     minify: false,
@@ -11,22 +10,22 @@ export default defineConfig([
     sourcemap: false,
     clean: true,
     treeshake: true,
-    tsconfig: "./tsconfig.json",
+    tsconfig: "./tsconfig.build.json",
+    attw: { profile: "node16" },
+} as const satisfies UserConfig;
+
+export default defineConfig([
+  {
+    ...CORE_OPTIONS,
+    entry: "src/index.ts",
   },
   {
-    entry: ["src/bundle.ts"],
+    ...CORE_OPTIONS,
+    entry: "src/bundle.ts",
     deps: {
       alwaysBundle: [/^@bufbuild\/protobuf/],
       onlyBundle: [/^@bufbuild\/protobuf/],
     },
-    format: ["cjs", "esm"],
-    dts: true,
     minify: true,
-    fixedExtension: false,
-    outDir: "dist",
-    sourcemap: false,
-    clean: true,
-    treeshake: true,
-    tsconfig: "./tsconfig.json",
   },
 ]);
