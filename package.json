@@ -72,6 +72,7 @@
     "@bufbuild/protobuf": "^2.13.0"
   },
   "devDependencies": {
+    "@arethetypeswrong/core": "^0.18.5",
     "@bufbuild/buf": "^1.72.0",
     "@bufbuild/protoc-gen-es": "^2.13.0",
     "@changesets/cli": "^2.31.1",
